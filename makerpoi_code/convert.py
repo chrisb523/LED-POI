@@ -1,6 +1,6 @@
-#Convert Images To Array
+#   Convert Images To Array
 #   Chris Butulis 
-#   Last Updated: 1.25.19
+#   Last Updated: 1.27.19
 #   Python Version: 3.7.2
 
 #**IMPORTANT NOTES: THIS FILE CONVERTS convert.jpg to output.txt**#
@@ -20,7 +20,7 @@ size = len(arr) #add 1 due to the first init line
 
 with open('temp.txt', 'a') as f:
     print("const uint8_t PROGMEM values[][3] = {", file=f)
-    for i in range (len(arr)):
+    for i in range (1, 200): #could also use len(arr)?
         for j in range(1, h): #Specifiy a second condition for image length
             if j > pixels:
                 break;
