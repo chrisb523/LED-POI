@@ -18,9 +18,10 @@ void setup() {
 }
 
 void loop() {
-  for(int i=0; i<NUM_LEDS; i++) {
+  for(int i=0; i<36; i++) {
     strip.setPixelColor(i, values[i][0], values[i][1], values[i][2]);
     strip.show(); 
-    delay(1);
+    //delay(25);
+    //strip.setPixelColor((i-4), 0, 0, 0);
   }
 }

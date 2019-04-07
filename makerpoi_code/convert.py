@@ -1,6 +1,6 @@
 #   Convert Images To Array
 #   Chris Butulis 
-#   Last Updated: 4.6.19
+#   Last Updated: 4.7.19
 #   Python Version: 3.7.2
 
 #**IMPORTANT NOTES: THIS FILE CONVERTS convert.jpg to output.txt**#
@@ -20,12 +20,12 @@ size = len(arr) #add 1 due to the first init line
 
 with open('temp.txt', 'a') as f:
     print("uint8_t values[][3] = {", file=f)
-    for i in range (len(arr)): #could also use len(arr)?
-        for j in range(0, 1): #Specifiy a second condition for image length
+    for i in range (w): #could also use len(arr)?
+        for j in range(len(arr)): #Specifiy a second condition for image length
             if j > pixels:
                 break;
             print("{", end="", file=f) 
-            print(arr[i, j], end="", file=f)
+            print(arr[j, i], end="", file=f)
             print("},", end="", file=f)
             print("\n", end="", file=f)
     print("};", file=f)
@@ -40,7 +40,7 @@ with open("temp.txt", "rt") as fin: #Remove brackets
             else:
                 fout.write(line.replace('[', ''))
 
-with open("temp1.txt", "rt") as fin:
+with open("temp1.txt", "rt") as fin: #remove brackets
     with open("temp2.txt", "wt") as fout:
         i=0 
         for line in fin:
