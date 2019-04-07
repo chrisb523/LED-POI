@@ -1,6 +1,7 @@
 # LED-project
+This is a project that can convert relatively small images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create POI with your own materials, and the difficulties I found along the way. 
 
-Running and Compiling the Program:
+# Running and Compiling the Program:
 
 First begin by placing the desired image, titled convert.jpg into the program directory
 
