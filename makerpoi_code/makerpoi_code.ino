@@ -3,7 +3,7 @@
 #define PIN 1
 #define NUM_LEDS 32
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(32, PIN, NEO_GBR + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(32, PIN, NEO_BRG + NEO_KHZ800);
 
 #include "graphicz.h"
 
@@ -18,10 +18,13 @@ void setup() {
 }
 
 void loop() {
-  for(int i=0; i<36; i++) {
-    strip.setPixelColor(i, values[i][0], values[i][1], values[i][2]);
+  int current_pixel = 0;
+  for(int i=0; i<2000; i++) {
+    strip.setPixelColor(current_pixel, values[i][0], values[i][1], values[i][2]);
     strip.show(); 
-    //delay(25);
-    //strip.setPixelColor((i-4), 0, 0, 0);
+    current_pixel++; 
+    if (current_pixel == 32)
+      current_pixel = 0;
+    delay(2);
   }
 }
