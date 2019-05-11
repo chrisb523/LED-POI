@@ -1,0 +1,49 @@
+Autoplay = 6
+ConstantSpeed = 400
+CrossfadeTime = 200
+CurrentLimit = 2000
+DefaultBrightness = "medium"
+SpeedToggle = 50, 100, 200, 300
+# StartUpFolder = "01 futurehoop", "03 flames", "04 pixelhoop", "12 galaxy"
+FavoritesFolder = "favorites"
+NavigationFeedback = disable
+
+# For more instructions about options.txt see 
+# https://moodhoops.com/docs
+# Lines that start with a # (like this one) are comments. 
+# They will be ignored when the program reads this file. 
+# Comments let you add helpful info (like this) AND allows you to easily
+# disable/enable options without having to delete/rewrite the line each time. 
+
+# Autoplay:
+# Default: 6
+# Max: 30
+# Min: 1
+# Can be disabled with Autoplay = disable
+
+# ConstantSpeed: 
+# Negative numbers display the bitmap in reverse.
+# Default: 200
+# Max: 500
+# Min: -500
+
+# CrossfadeTime: 
+# Default: 1000
+# Max: 10000
+# Min: 0
+# When listed as 0, Crossfade will be disabled.
+
+# CurrentLimit: 
+# Default: 2000
+# Max: 2000
+# Min: 500
+
+# DefaultBrightness: 
+# Default setting can be "low", "medium", or "high".
+# Default: medium
+
+# SpeedToggle:
+# Default: SpeedToggle = 100, 200, 300 
+
+# StartupFolder: 
+# List of folder names to cycle through at each startup.
