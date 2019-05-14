@@ -16,6 +16,12 @@ pixels = 32 #Number of pixels in use in Poi
 img = Image.open('convert.jpg')
 h,w,d = np.shape(img)
 
+new_height = 32
+new_width = new_height * w // h
+img = img.resize((new_width, new_height), Image.ANTIALIAS)
+img.save('convert.jpg')
+h,w,d = np.shape(img)
+
 arr = np.asarray(img)
 arr = arr[:, :, :3] #Cuts off extraneous channels 
 size = len(arr) #add 1 due to the first init line
@@ -27,7 +33,7 @@ with open('temp.txt', 'a') as f:
                 break;
             print("strip.setPixelColor(",(j+1), "",  arr[j, i], ");", end="\n", file=f)
         print("strip.show();", end="\n", file=f)
-        print("delay(10);", end="\n", file=f)
+        print("delay(1);", end="\n", file=f)
             
 
 with open("temp.txt", "rt") as fin: #remove double spaces

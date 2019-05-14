@@ -1,1 +1,1 @@
-convert.py convert.jpg > graphicz.h
+convert.py convert.jpg > makerpoi_code.ino
