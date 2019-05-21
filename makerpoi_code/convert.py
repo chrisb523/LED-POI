@@ -19,6 +19,7 @@ h,w,d = np.shape(img)
 new_height = 32
 new_width = new_height * w // h
 img = img.resize((new_width, new_height), Image.ANTIALIAS)
+img = img.convert('RGB')
 img.save('convert.jpg')
 h,w,d = np.shape(img)
 
@@ -31,7 +32,7 @@ with open('temp.txt', 'a') as f:
         for j in range(len(arr)): #Specifiy a second condition for image length
             if j > pixels:
                 break;
-            print("strip.setPixelColor(",(j+1), "",  arr[j, i], ");", end="\n", file=f)
+            print("strip.setPixelColor(",(j), "",  arr[j, i], ");", end="\n", file=f)
         print("strip.show();", end="\n", file=f)
         print("delay(1);", end="\n", file=f)
             
