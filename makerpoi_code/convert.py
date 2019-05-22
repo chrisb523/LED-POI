@@ -14,7 +14,6 @@ import os
 
 #DEFINITIONS 
 pixels = 32 #Number of pixels in use in Poi
-custom_delay = 1 #Add a custom delay if the image appears stretched 
 
 #GET THE IMAGE
 img = Image.open('convert.jpg')
@@ -41,7 +40,7 @@ with open('temp.txt', 'a') as f:
                 break;
             print("strip.setPixelColor(",(j), "",  arr[j, i], ");", end="\n", file=f)
         print("strip.show();", end="\n", file=f)
-        print("delay("+custom_delay+");", end="\n", file=f)
+        print("delay(1);", end="\n", file=f)
             
 #REMOVE BRACKETS
 with open("temp.txt", "rt") as fin: 
