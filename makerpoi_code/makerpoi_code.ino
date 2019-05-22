@@ -23,12 +23,14 @@ void setup() {
 
 float bat() {
   float measuredvbat = analogRead(VBATPIN);
+  measuredvbat *= 3.3; // Multiply by 3.3V, our reference voltage
+  measuredvbat /= 1024; // convert to voltage
   return measuredvbat;
     
 }
 
 void loop() {
-while(bat() < 1023); 
+while(bat() > 3.29 && bat() < 3.31); 
 strip.setPixelColor(0, 170, 30, 56);
 strip.setPixelColor(1, 166, 32, 56);
 strip.setPixelColor(2, 166, 29, 55);
