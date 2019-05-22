@@ -1,17 +1,18 @@
-# LED-project
-This is a project that can convert relatively small images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create POI with your own materials, and the difficulties I found along the way. The project is currently in development. While most of the base software has been completed, many features have not been completed yet. 
+# LED POI Project
+This is a project that can convert images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create POI with your own materials, and the difficulties I found along the way. The project is still in development, but most features are reliable. Feel free to modify the code or project as you wish, or add your own features.  
 
 # Running and Compiling the Program:
 
-First begin by placing the desired image, titled convert.jpg into the program directory
+First begin by placing the desired image, titled convert.jpg into the program directory (/makerpoi_code/)
 
-Then, execute the run.bat file in the program directory
+Then, ensure that the number of pixels is correctly defined in convert.py
+
+Execute the run.bat file in the program directory
 
 Examine the arduino code file, and ensure that are variables are set correctly 
 
   -Make sure the Pinout is correct
-  
-  -Make sure the numleds is correct
+  -Make sure the voltages in the battery measuring function are correct
   
 # The Stages of Development
 The project is based off of python 3.7 and C++ (Which is used by arduino IDE). The link to python 3.7 is (https://www.python.org/downloads/release/python-373/) and the link to arduino IDE is (https://www.arduino.cc/en/main/software). For the python install, remember to set environment variables. In addition to python, one must also install/upgrade pip, which can be done from the command line using: 
@@ -22,10 +23,12 @@ Then, install all libraries requisite for the convert image program (cv2, PIL, a
 
  py -m pip install pillow
  
-This should meet all of the basic installation requirements for the project. However, there are some aspects of the ardino IDE that may need to be tweaked. The SAMD boards for arduino have to be installed, in addition to the Neopixel library. With this, all of the software should be configured.
+This should meet all of the basic installation requirements for the project. However, there are some aspects of the ardino IDE that may need to be tweaked. The SAMD boards for arduino have to be installed, in addition to the Neopixel library. With this, all of the software should be configured correctly.
+
+Also, install the Trinket m0 board using this link: https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
 
  # Hardware: 
-The project requires a host of hardware. All of which can be purchased from Adafruit's website or Amazon. For the project, I used the following parts: 
+The project requires a host of hardware. All of the hardware can be purchased from Adafruit's website or Amazon. For the project, I used the following parts: 
 
 ALITOVE 3.2ft 144 Pixels WS2812B Individually Addressable LED Strip Light (https://www.amazon.com/gp/product/B019DYZNO6/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
 
@@ -39,7 +42,7 @@ Micro-USB cable (https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B
 
 2 of Adafruit LiIon/LiPoly Backpack Add-On for Pro Trinket/ItsyBitsy (https://www.adafruit.com/product/2124)
 
-In total, the project cost me around $66.00, as I had a breadboard, wires, and cables. 
+In total, the project cost me around $66.00, as I had a breadboard, wires, nylon cord, and cables. 
 
 # Assembly
 
