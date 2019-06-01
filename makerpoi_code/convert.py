@@ -81,7 +81,7 @@ with open("temp5.txt", "rt") as fin:
 #PUT THE BASE CODE AT THE TOP                
 with open("temp6.txt", "rt") as fin: 
     with open("output.txt", "wt") as fout: 
-        fout.write("#define VBATPIN 2\n#include <Adafruit_NeoPixel.h>\n#define PIN 1\n#define NUM_LEDS 32\nAdafruit_NeoPixel strip = Adafruit_NeoPixel(32, PIN, NEO_GRB + NEO_KHZ800);\nfloat measuredvbat;\nvoid setup() {\nstrip.begin();\nstrip.setBrightness(40);\nmeasuredvbat = bat();\nfor(int i=0; i<32; i++) {\nif(measuredvbat > 3.5)\nstrip.setPixelColor(i, 0, 255, 0);\nif(measuredvbat > 3.29 && measuredvbat < 3.31)\nstrip.setPixelColor(i, 0, 0, 255);\nif(measuredvbat < 3.29)\nstrip.setPixelColor(i, 255, 0, 0);\n}\nstrip.show();\ndelay(500);\nstrip.clear();\nstrip.show();\n}\nfloat bat() {\nfloat measuredvbat = analogRead(VBATPIN);\nreturn measuredvbat*3.30/1023;\n}\nvoid loop() {\nwhile(measuredvbat > 3.29) {\ndelay(1);\n}\n")
+        fout.write("#define VBATPIN 2\n#include <Adafruit_NeoPixel.h>\n#define PIN 1\n#define NUM_LEDS 32\nAdafruit_NeoPixel strip = Adafruit_NeoPixel(32, PIN, NEO_GRB + NEO_KHZ800);\nfloat measuredvbat;\nvoid setup() {\nstrip.begin();\nstrip.setBrightness(40);\nmeasuredvbat = bat();\nfor(int i=0; i<32; i++) {\nif(measuredvbat > 1.5 && measuredvbat < 2)\nstrip.setPixelColor(i, 0, 255, 0);\nif(measuredvbat > 3.29 && measuredvbat < 3.31)\nstrip.setPixelColor(i, 0, 0, 255);\nif(measuredvbat < 1.5)\nstrip.setPixelColor(i, 255, 0, 0);\n}\nstrip.show();\ndelay(500);\nstrip.clear();\nstrip.show();\n}\nfloat bat() {\nfloat measuredvbat = analogRead(VBATPIN);\nreturn measuredvbat*3.30/1023;\n}\nvoid loop() {\nwhile(measuredvbat > 3.29) {\ndelay(1);\n}\n")
         fout.write(fin.read())
         fout.write("}")
 
