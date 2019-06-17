@@ -1,20 +1,20 @@
 # LED POI Project
-This is a project that can convert images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create POI with your own materials, and the difficulties I found along the way. The project is still in development, but most features are reliable. Feel free to modify the code or project as you wish, or add your own features.  
+This is a project that can convert images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create your own POI with materials listed below. Furthermore, it lists some of the difficulties I found along the way developing both the software and hardware components, and the solutions I found to solve them. The project is still in development, but most features are reliable and tested. Feel free to modify the code or project hardware as you wish, or even add your own features.  
 
 # Running and Compiling the Program:
 
-First begin by placing the desired image, titled convert.jpg into the program directory (/makerpoi_code/)
+First begin by placing the desired image, which must be in the JPEG format (.jpg) into the arduino program directory (/makerpoi_code/)
 
-Then, ensure that the number of pixels is correctly defined in convert.py
+Then, ensure that the number of pixels is correctly defined in convert.py (only nessescary if you change the number of LEDs)
+Before running the program, see the software section, and ensure you have all of the dependencies
 
-Execute the run.bat file in the program directory
+Execute the run.bat file in the program directory, or use a shell to execute the convert.py program
 
-Examine the arduino code file, and ensure that are variables are set correctly 
-
+Examine the arduino code file, and ensure that are variables are set correctly to the specifications of the project 
   -Make sure the Pinout is correct
-  -Make sure the voltages in the battery measuring function are correct
+  -Make sure the voltages in the battery measuring function are correct (depending on whether you are using 3.3v or 5v logic)
   
-# The Stages of Development
+# Software: 
 The project is based off of python 3.7 and C++ (Which is used by arduino IDE). The link to python 3.7 is (https://www.python.org/downloads/release/python-373/) and the link to arduino IDE is (https://www.arduino.cc/en/main/software). For the python install, remember to set environment variables. In addition to python, one must also install/upgrade pip, which can be done from the command line using: 
 
 py -m pip upgrade pip
@@ -42,7 +42,20 @@ Micro-USB cable (https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B
 
 2 of Adafruit LiIon/LiPoly Backpack Add-On for Pro Trinket/ItsyBitsy (https://www.adafruit.com/product/2124)
 
+Any Nylon Rope
+
 In total, the project cost me around $66.00, as I had a breadboard, wires, nylon cord, and cables. 
+-------------------------------------------------------------------------------------------------------
+Additional Items:
+If you so wish to build the cases for the POI, it will cost extra, but I found that it was important to build them to protect from water damage and collisions. 
+
+4 Vinyl Caps
+(https://www.amazon.com/gp/product/B0747RVMRZ/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1)
+
+Clear Polycarbonate Tubing, 1-1/8" ID, 1-1/4" OD, 1/16" Wall, 3' Length
+(https://www.amazon.com/gp/product/B000OMFLD0/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
+
+Tissue Paper or Towels - To act as a shock absorber and spacer
 
 # Assembly
 
@@ -52,4 +65,6 @@ The initial development board appeared as so, with some soldering required for t
 
 The software development began with the convert.py script developed in python. It converts the image to an rgb array, and prints it out in the format of a header file. This process was not easy, and the file was cleaned by multiple replace functions. It can be run with the run.bat file. 
 
-Then, the project progressed to writing the arduino code. 
+Initially, I had written the python script to export a header file that contained all of the rgb values in arrays. However, I later decided to make the python script handle the placements of these values directly into the files. This reduced the time taken by the trinket board to process the images, and allowed for a clearer image with higher resolution. 
+
+With the second version of the project, I added a battery detector to tell the user whether or not the battery is running low, using the colors red and green. This was enabled by the soldering of the usb pin to an analog read pin, and a software analog read function that detetected the voltage on startup. Futhermore, this feature also has the ability to prevent the POI from displaying the image at all if the POI are charging or plugged into a computer for code upload. Instead, the POI will flash blue one time. This works due to the property that the USB pin outputs differing voltages based on factors such as battery level, and whether or not the POI are charging. 
