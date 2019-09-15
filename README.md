@@ -1,5 +1,5 @@
 # LED POI Project
-This is a project that can convert images for use on POI with arduino based operating systems. Additionally, it contains the documentation necessescary to create your own POI with materials listed below. Furthermore, it lists some of the difficulties I found along the way developing both the software and hardware components, and the solutions I found to solve them. The project is still in development, but most features are reliable and tested. Feel free to modify the code or project hardware as you wish, or even add your own features.  
+This is a project that converts JPEG format images to code usable on LED poi with arduino-based operating systems. Additionally, it contains the documentation necessescary to build poi, in addition to the materials I used to build them myself. Furthermore, it outlines some of the difficulties I had along the way developing both the software and hardware components, and the solutions I found. The project is still in development, but most features are reliable and tested. I would encourage modification of the original programs and hardware to any specifications.   
 
 # Running and Compiling the Program:
 
@@ -15,20 +15,20 @@ Examine the arduino code file, and ensure that are variables are set correctly t
   -Make sure the voltages in the battery measuring function are correct (depending on whether you are using 3.3v or 5v logic)
   
 # Software: 
-The project is based off of python 3.7 and C++ (Which is used by arduino IDE). The link to python 3.7 is (https://www.python.org/downloads/release/python-373/) and the link to arduino IDE is (https://www.arduino.cc/en/main/software). For the python install, remember to set environment variables. In addition to python, one must also install/upgrade pip, which can be done from the command line using: 
+The project is based off of python 3.7 and C++ (Which is used by arduino IDE). The download link to python 3.7 is (https://www.python.org/downloads/release/python-373/) and the download link to arduino IDE is (https://www.arduino.cc/en/main/software). For the python install, remember to set environment variables. In addition to python, one must also install or upgrade pip, which can be done from the command line using: 
 
 py -m pip upgrade pip
 
-Then, install all libraries requisite for the convert image program (cv2, PIL, and numpy). However PIL has been deprecated, and PILLOW is in use with more recent versions of python. To install it, use:
+Then, install all dependencies for the convert image program (cv2, PIL, and numpy). However, PIL has been deprecated, and PILLOW is in use with more recent versions of python. To install it, use:
 
  py -m pip install pillow
  
 This should meet all of the basic installation requirements for the project. However, there are some aspects of the ardino IDE that may need to be tweaked. The SAMD boards for arduino have to be installed, in addition to the Neopixel library. With this, all of the software should be configured correctly.
 
-Also, install the Trinket m0 board using this link: https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+Then, install the Trinket m0 board using this link: https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
 
  # Hardware: 
-The project requires a host of hardware. All of the hardware can be purchased from Adafruit's website or Amazon. For the project, I used the following parts: 
+The project requires a number of hardware components, most of which are . All of the hardware can be purchased from Adafruit's website or Amazon. For the project, I used the following parts: 
 
 ALITOVE 3.2ft 144 Pixels WS2812B Individually Addressable LED Strip Light (https://www.amazon.com/gp/product/B019DYZNO6/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
 
@@ -42,7 +42,7 @@ Micro-USB cable (https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B
 
 2 of Adafruit LiIon/LiPoly Backpack Add-On for Pro Trinket/ItsyBitsy (https://www.adafruit.com/product/2124)
 
-Any Nylon Rope
+Generic Nylon Rope
 
 In total, the project cost me around $66.00, as I had a breadboard, wires, nylon cord, and cables. 
 -------------------------------------------------------------------------------------------------------
